@@ -1,23 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { Header } from "./componenets/Header";
-import { Footer } from "./componenets/Footer";
-import { MainCard } from "./componenets/MainCard";
-import { Trending } from "./componenets/Trending";
-import { AllBlogPost } from "./componenets/AllBlogPost";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import { MainCard } from "../components/MainCard";
+import { Trending } from "../components/Trending";
+import { AllBlogPost } from "../components/AllBlogPost";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
-// const getArticle = async () => {
-//   const res = await fetch();
+const getArticle = async () => {
+  const res = await fetch("https://dev.to/api/articles");
 
-//   const articles = await res.json();
-//   return articles;
-// };
+  const articles = await res.json();
+
+  return articles;
+};
 
 export default function Home() {
-  const [a, setA] = useState(0);
   const [articles, setArticles] = useState([]);
 
   const getData = async () => {
@@ -25,7 +25,8 @@ export default function Home() {
 
     setArticles(data);
   };
-  useEffect(async () => {
+
+  useEffect(() => {
     getData();
   }, []);
 
@@ -35,7 +36,7 @@ export default function Home() {
         <Header />
         <MainCard />
         <Trending />
-        <AllBlogPost />
+        <AllBlogPost articles={articles} />
         <Footer />
       </div>
     </div>
