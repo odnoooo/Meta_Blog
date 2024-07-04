@@ -1,7 +1,7 @@
 import { ArticleCards } from "./ArticleCards";
 import { CardName } from "./CardName";
 
-export const AllBlogPost = () => {
+export const AllBlogPost = ({ articles }) => {
   return (
     <div className="flex flex-col gap-8">
       <CardName title="All Blog Post" />
@@ -19,7 +19,7 @@ export const AllBlogPost = () => {
             <ArticleCards
               key={item.title}
               img={item.cover_image}
-              tag={item.tag}
+              tag={item.tags}
               desc={item.description}
               date={item.created_at}
             />

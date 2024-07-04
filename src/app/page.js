@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { MainCard } from "../components/MainCard";
+import { Main } from "../components/Main";
 import { Trending } from "../components/Trending";
 import { AllBlogPost } from "../components/AllBlogPost";
 import Head from "next/head";
@@ -31,11 +31,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <div className="w-[343px] m-auto flex flex-col gap-6">
+    <div className="w-full px-4 lg:w-[1130px]">
+      <div className=" m-auto flex flex-col gap-6 text-current">
         <Header />
-        <MainCard />
-        <Trending />
+        <Main articles={articles} />
+        <Trending articles={articles} />
         <AllBlogPost articles={articles} />
         <Footer />
       </div>
