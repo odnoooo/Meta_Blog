@@ -13,7 +13,7 @@ export const AllBlogPost = ({ articles }) => {
         <li>Technology</li>
         <li>Branding</li>
       </ul>
-      {articles.map((item, index) => {
+      {articles.slice(0, 9).map((item, index) => {
         return (
           <div>
             <ArticleCards

@@ -7,8 +7,8 @@ export const Trending = ({ articles }) => {
   return (
     <div className="h-[390px] flex flex-col gap-8">
       <CardName title="Trending" />
-      <div className="flex">
-        {articles.slice(0, 9).map((item, index) => {
+      <div className="flex gap-3 h-80 w-[1130px] ">
+        {articles.slice(0, 4).map((item, index) => {
           return (
             <div>
               <TrendingCards

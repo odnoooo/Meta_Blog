@@ -31,7 +31,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full px-4 lg:w-[1130px] lg:m-auto">
+    <div className="w-full m-auto px-4 lg:w-[1130px] lg:m-auto">
       <div className=" m-auto flex flex-col gap-6 text-current">
         <Header />
         <Main articles={articles} />
