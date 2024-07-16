@@ -83,7 +83,7 @@ export const Main = ({ articles }) => {
   };
 
   return (
-    <div className="w-full h-[651px] flex flex-col gap-6">
+    <div className="lg:w-[1216px] h-[651px] flex flex-col gap-6 lg:gap-[11px] ">
       <div className="relative overflow-hidden w-full h-full">
         {articles.map((item, index) => (
           <div
@@ -105,7 +105,7 @@ export const Main = ({ articles }) => {
         ))}
       </div>
 
-      <div className="flex gap-2 m-auto h-10">
+      <div className="flex gap-2 justify-center h-10 lg:justify-end ">
         <button
           className="px-3 border border-slate-500 rounded-md"
           onClick={prevSlide}

@@ -5,10 +5,10 @@ import { FaBars } from "react-icons/fa";
 
 export const Header = () => {
   return (
-    <header className=" flex justify-between py-5 items-center">
+    <header className=" flex justify-between py-5 items-center relative lg:w-[1216px]">
       <img className="h-[26px]" src="./image/Logo.png"></img>
-      {/* <div className="flex items-center gap-6 ">
-        <nav className="flex gap-10 items-center justufy-center px-55">
+      <div className=" absolute invisible lg:visible flex items-center gap-6 right-0">
+        <nav className="flex gap-10 items-center justufy-center px-55 ">
           <a href="">Home</a>
           <a href="">Blog</a>
           <a href="">Contact</a>
@@ -24,8 +24,8 @@ export const Header = () => {
             <CiSearch />
           </form>
         </search>
-      </div> */}
-      <FaBars />
+      </div>
+      <FaBars className="visible lg:invisible" />
     </header>
   );
 };

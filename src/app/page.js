@@ -6,7 +6,6 @@ import { Footer } from "../components/Footer";
 import { Main } from "../components/Main";
 import { Trending } from "../components/Trending";
 import { AllBlogPost } from "../components/AllBlogPost";
-import Head from "next/head";
 import { useEffect, useState } from "react";
 
 const getArticle = async () => {
@@ -31,8 +30,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full m-auto px-4 lg:w-[1130px] lg:m-auto">
-      <div className=" m-auto flex flex-col gap-6 text-current">
+    <div className="w-full m-auto px-4 lg:w-[1216px] lg:m-auto">
+      <div className=" m-auto flex flex-col gap-20 text-current">
         <Header />
         <Main articles={articles} />
         <Trending articles={articles} />

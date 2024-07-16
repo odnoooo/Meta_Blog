@@ -1,4 +1,6 @@
+import { format } from "date-fns";
 export const MainCards = ({ img, tag, desc, date }) => {
+  const formattedDate = format(new Date(date), "MM/dd/yyyy");
   return (
     <div className=" relative border rounded-2xl h-[600px] flex  items-end  ">
       <img
@@ -15,7 +17,7 @@ export const MainCards = ({ img, tag, desc, date }) => {
           </p>
         </div>
 
-        <p className="text-base text-slate-500">{date}</p>
+        <p className="text-base text-slate-500">{formattedDate}</p>
       </div>
     </div>
   );
