@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { ArticleCards } from "@/components/ArticleCards";
 
 const BlogsPage = () => {
@@ -9,7 +10,8 @@ const BlogsPage = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await res.json();
+        const res = await fetch("https://dev.to/api/articles"); // Assuming your API endpoint is /api/articles
+        const data = await res.json();
 
         setArticles(data);
       } catch (error) {
@@ -21,17 +23,23 @@ const BlogsPage = () => {
 
   return (
     <div className="w-full m-auto px-4 lg:w-[1216px] lg:m-auto">
-      <div className=" m-auto flex flex-col gap-20 text-current">
-        <div>
-          <ArticleCards
-            key={item.title}
-            img={item.cover_image}
-            tags={item.tag_list}
-            desc={item.description}
-            date={item.created_at}
-          />
-        </div>
+      <div className="flex flex-wrap gap-[19px]">
+        {articles.slice(0, 12).map((item) => (
+          <Link key={item.id} href={`/blogs/${item.id}`}>
+            <div>
+              <ArticleCards
+                img={item.cover_image}
+                tags={item.tag_list}
+                desc={item.description}
+                date={item.created_at}
+              />
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );
 };
+
+export default BlogsPage;
+

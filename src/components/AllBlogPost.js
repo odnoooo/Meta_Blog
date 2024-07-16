@@ -21,7 +21,7 @@ export const AllBlogPost = ({ articles }) => {
 
       <div className="flex flex-wrap gap-[19px]">
         {articles.slice(0, 9).map((item) => (
-          <Link key={item.id} href={`/blogs/${item.id}`}>
+          <Link key={item.id} href={`/blog?id=${item.id}`}>
             <div>
               <ArticleCards
                 img={item.cover_image}
