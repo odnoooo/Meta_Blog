@@ -16,20 +16,23 @@ export const AllBlogPost = ({ articles }) => {
           <li>Technology</li>
           <li>Branding</li>
         </ul>
-        <p className="invisible lg:visible text-xs font-bold">View all</p>
+        <Link
+          href={`/blogs`}
+          className="invisible lg:visible text-xs font-bold"
+        >
+          View all
+        </Link>
       </div>
 
-      <div className="flex flex-wrap gap-[19px]">
+      <div className="flex flex-col lg:grid lg:grid-cols-3 gap-5">
         {articles.slice(0, 9).map((item) => (
-          <Link key={item.id} href={`/blog?id=${item.id}`}>
-            <div>
-              <ArticleCards
-                img={item.cover_image}
-                tags={item.tag_list}
-                desc={item.description}
-                date={item.created_at}
-              />
-            </div>
+          <Link key={item.id} href={`/blog/${item.id}`}>
+            <ArticleCards
+              img={item.cover_image}
+              tags={item.tag_list}
+              desc={item.description}
+              date={item.created_at}
+            />
           </Link>
         ))}
       </div>

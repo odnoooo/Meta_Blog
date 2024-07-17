@@ -32,15 +32,11 @@ export default function Home() {
   return (
     <div className="w-full m-auto px-4  lg:m-auto">
       <div className=" m-auto flex flex-col gap-20 text-current lg:w-[1216px]">
-        <Header />
         <Main articles={articles} />
         <Trending articles={articles} />
         <AllBlogPost articles={articles} />
       </div>
-      <div className="w-screen bg-gray-100">
-        <Footer />
-      </div>
-
+      <div className="w-screen bg-gray-100"></div>
     </div>
   );
 }
