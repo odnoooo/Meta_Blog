@@ -1,11 +1,13 @@
+"use client";
+
 import { format } from "date-fns";
 
 export const ArticleCards = ({ img, tags, desc, date }) => {
   const formattedDate = format(new Date(date), "MM/dd/yyyy");
 
   return (
-    <div className=" h-[476px] border rounded-lg  flex flex-col gap-6">
-      <img src={img} className="h-60 rounded-lg" />
+    <div className=" h-[476px] border rounded-lg  flex flex-col gap-6 w-full p-4">
+      <img src={img} className="h-60 rounded-lg w-full" />
       <div className="flex flex-col  ">
         <div className="flex gap-2">
           {tags.slice(0, 3).map((tag, index) => (

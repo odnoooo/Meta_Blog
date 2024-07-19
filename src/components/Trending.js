@@ -1,24 +1,25 @@
-
 import { CardName } from "./CardName";
 import { TrendingCards } from "./TrendingCards";
 
 export const Trending = ({ articles }) => {
   return (
-    <div className="h-[390px] flex flex-col gap-8 ">
+    <div className="flex flex-col gap-8 lg:w-[1216px]">
       <CardName title="Trending" />
-      <div className="flex gap-3 h-80 w-[1216px]  ">
-        {articles.slice(0, 4).map((item, index) => {
-          return (
-            <div>
-              <TrendingCards
-                key={item.title}
-                img={item.cover_image}
-                title={item.title}
-                desc={item.description}
-              />
-            </div>
-          );
-        })}
+      <div className="w-full overflow-scroll">
+        <div className="w-[400%] lg:w-full flex gap-4 ">
+          {articles.slice(0, 4).map((item, index) => {
+            return (
+              <div>
+                <TrendingCards
+                  key={item.title}
+                  img={item.cover_image}
+                  tags={item.tag_list}
+                  desc={item.description}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       <button></button>

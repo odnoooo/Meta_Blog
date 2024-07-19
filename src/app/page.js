@@ -1,8 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
 import { Main } from "../components/Main";
 import { Trending } from "../components/Trending";
 import { AllBlogPost } from "../components/AllBlogPost";
@@ -31,7 +28,7 @@ export default function Home() {
 
   return (
     <div className="w-full m-auto px-4  lg:m-auto">
-      <div className=" m-auto flex flex-col gap-20 text-current lg:w-[1216px]">
+      <div className=" m-auto flex flex-col gap-16 text-current lg:w-[1216px]">
         <Main articles={articles} />
         <Trending articles={articles} />
         <AllBlogPost articles={articles} />

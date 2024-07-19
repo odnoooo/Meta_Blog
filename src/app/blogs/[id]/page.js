@@ -24,8 +24,8 @@ const BlogPage = () => {
   if (!article) return <>Loading...</>;
   const formattedDate = format(new Date(article.created_at), "MM/dd/yyyy");
   return (
-    <div>
-      <div className="lg:w-[800px] m-auto flex flex-col gap-8">
+    <div className="w-full lg:w-[1216px] px-3">
+      <div className="lg:w-[800px] m-auto flex flex-col gap-8 font-light">
         <div>
           <div className="flex flex-col gap-8" key={article.id}>
             <h1 className="text-4xl font-semibold">{article.title}</h1>
@@ -40,9 +40,9 @@ const BlogPage = () => {
             </div>
 
             <img src={article.cover_image} alt={article.title} />
-            <p>{article.description}</p>
+            <p className="text-xl font-light"> {article.description}</p>
             <div
-              className="flex flex-col gap-6 [&>p]:text-xl   [&>h2]:text-2xl [&>h2]:font-bold text-gray-800 "
+              className="flex flex-col gap-6 [&>p]:text-xl   [&>h2]:text-2xl [&>h2]:font-bold text-gray-800 font-light"
               dangerouslySetInnerHTML={{ __html: article.body_html }}
             ></div>
           </div>

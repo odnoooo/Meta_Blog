@@ -4,8 +4,8 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 export const Footer = () => {
   return (
-    <div className=" text-gray-500 flex flex-col gap-6 bg-gray-100 py-16 lg:gap-20 w-screen mt-12">
-      <div className="flex flex-col gap-6 lg:flex-row lg:w-[1216px] m-auto ">
+    <div className=" text-gray-500 flex flex-col gap-6 bg-gray-100 py-16 lg:gap-20 w-screen mt-12 px-3">
+      <div className="flex flex-col gap-6 lg:flex-row w-full lg:w-[1216px] m-auto  ">
         <div className="flex flex-col gap-6">
           <h2 className="font-bold text-black text-lg">About</h2>
           <h3 className="font-semi-bold text-base ">
@@ -32,7 +32,7 @@ export const Footer = () => {
           <FaLinkedin />
         </div>
       </div>
-      <div className="border-t-[1px] border-slate-300 flex flex-col py-6 gap-12 lg:flex-row lg:justify-between  lg:w-[1216px] m-auto">
+      <div className="border-t-[1px] border-slate-300 flex flex-col py-6 gap-12 lg:flex-row lg:justify-between w-full lg:w-[1216px] m-auto">
         <div className="h-12 flex gap-3 ">
           <img className="object-cover h-12" src="./image/Logo (2).png"></img>
           <div className="h-12 ">
