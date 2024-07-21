@@ -3,6 +3,7 @@
 import { ArticleCards } from "./ArticleCards";
 import { CardName } from "./CardName";
 import Link from "next/link";
+import { RiArrowLeftWideFill } from "react-icons/ri";
 
 export const AllBlogPost = ({ articles }) => {
   return (
@@ -41,7 +42,13 @@ export const AllBlogPost = ({ articles }) => {
         <button className="border border-slate-300 hover:bg-gray-100 py-3 px-5 rounded-lg text-base">
           Load more
         </button>
+        <Link href="#gggg"><button
+          className="px-4 py-2 hover:bg-gray-100 rounded right-0"
+        >
+          <RiArrowLeftWideFill />
+        </button>
+        </Link>
       </div>
-    </div>
+    </div >
   );
 };

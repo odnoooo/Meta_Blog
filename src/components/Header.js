@@ -18,7 +18,7 @@ export const Header = () => {
               <Link href="/blogs">Blog</Link>
               <Link href="/contact">Contact</Link>
             </nav>
-            <div>
+            <Link href="#gggg">
               <form className="flex justify-between items-center bg-[#f4f4f5] px-2 rounded-lg">
                 <input
                   className="border-none bg-transparent p-2 focus:outline-none"
@@ -28,7 +28,7 @@ export const Header = () => {
                 />
                 <CiSearch />
               </form>
-            </div>
+            </Link>
           </div>
           <div className="relative lg:hidden flex items-center">
             <FaBars className="z-20" />
@@ -39,7 +39,7 @@ export const Header = () => {
             />
           </div>
         </header>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
