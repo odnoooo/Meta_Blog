@@ -43,9 +43,6 @@ export const Header = () => {
               type="checkbox"
               id="checkbox"
             />
-            <label htmlFor="checkbox" className="z-10">
-              <FaBars />
-            </label>
           </div>
         </header>
       </div>

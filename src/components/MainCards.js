@@ -16,7 +16,7 @@ export const MainCards = ({ img, tags, desc, date }) => {
           <div className="flex flex-col gap-5">
             <div className="flex gap-2">
               {tags.slice(0, 3).map((tag, index) => (
-                <p className=" w-fit py-2 px-3 bg-[#4B6BFB] rounded-lg text-white text-sm ">
+                <p key={index} className=" w-fit py-2 px-3 bg-[#4B6BFB] rounded-lg text-white text-sm ">
                   {tag}
                 </p>
               ))}
