@@ -42,7 +42,7 @@ export const AllBlogPost = ({ articles }) => {
         </button>
       </div>
       <Link href="#start" className="flex justify-end">
-        <button className="px-4 py-2 hover:bg-gray-100 rounded">
+        <button className="p-4 rounded-full hover:bg-gray-100">
           <RiArrowUpWideFill />
         </button>
       </Link>

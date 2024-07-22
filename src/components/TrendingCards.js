@@ -42,7 +42,7 @@ export const TrendingCards = ({ img, tags, desc }) => {
         <div className="flex gap-2">
           {tags.slice(0, 3).map((tag, index) => (
             <p
-              key={index} // `key` түлхүүрийг зөв бичсэн
+              key={index}
               className="w-fit py-2 px-3 bg-[#f7f8ff] rounded-lg text-[#4B6BFB] text-sm"
             >
               {tag}

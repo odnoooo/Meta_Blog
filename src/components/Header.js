@@ -3,13 +3,19 @@
 import { CiSearch } from "react-icons/ci";
 import { FaBars } from "react-icons/fa";
 import Link from "next/link";
-import { SideBar } from "../components/Sidebar";
+import { Drawer } from "./Drawer";
 import Image from "next/image";
+import { useState } from "react"
 
+export const Header = ({ toggleTheme }) => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-export const Header = () => {
+  const handleDrawer = () => {
+    setIsDrawerOpen(isDrawerOpen)
+  };
+
   return (
-    <div className="w-screen mb-16 lg:mb-[100px]">
+    <div id="#start" className="w-screen mb-16 lg:mb-[100px]">
 
       <div>
         <header className="px-4 flex justify-between py-5 items-center relative lg:w-[1216px] m-auto">
@@ -37,16 +43,22 @@ export const Header = () => {
               </button>
             </form>
           </div>
-          <div className="relative lg:hidden flex items-center">
-            <FaBars className="z-20" />
-            <input
-              className="w-4 h-4 absolute opacity-0"
-              type="checkbox"
-              id="checkbox"
-            />
-          </div>
+          <IconButton onclick={handleDrawer} className="relative lg:hidden flex items-center">
+            <FaBars size={24} />
+          </IconButton>
         </header>
       </div>
+
+      <Drawer isOpen={isDrawerOpen} closeDrawer={handleDrawer} />
     </div>
   );
 };
+const IconButton = ({ children, onClick }) => {
+  return (
+    <div
+      onClick={onClick}
+      className="cursor-pointer w-[40px] h-[40px] founded-full hover:bg-gray-100">
+      {children}
+    </div>
+  )
+}
