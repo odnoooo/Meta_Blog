@@ -4,8 +4,7 @@ import { CiSearch } from "react-icons/ci";
 import { FaBars } from "react-icons/fa";
 import Link from "next/link";
 import { Bar } from "../components/Bar";
-import Image from "next/image"
-
+import Image from "next/image";
 
 export const Header = () => {
   return (
@@ -13,12 +12,7 @@ export const Header = () => {
       <Bar />
       <div className="">
         <header className="px-4 flex justify-between py-5 items-center relative lg:w-[1216px] m-auto">
-          <Image
-            src="/image/Logo.png"
-            alt="Logo"
-            width={158}
-            height={36}
-          />
+          <Image src="/image/Logo.png" alt="Logo" width={158} height={36} />
           <div className="absolute hidden lg:flex items-center gap-[220px] right-3">
             <nav className="flex gap-10 items-center justify-center">
               <Link href="/">Home</Link>
@@ -46,7 +40,7 @@ export const Header = () => {
             />
           </div>
         </header>
-      </div >
-    </div >
+      </div>
+    </div>
   );
 };

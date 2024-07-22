@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 export const TrendingCards = ({ img, tags, desc }) => {
   return (
     <div className=" relative border rounded-2xl h-80 flex  items-end">
-      <img
+      <Image
         src={img}
         className="object-cover relative w-full h-full rounded-2xl bottom-0"
       />
