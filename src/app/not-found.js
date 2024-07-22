@@ -8,7 +8,7 @@ const Page = () => {
       <div className="flex flex-col gap-6">
         <h2 className="text-2xl font-semibold">Page Not Found</h2>
         <p className="flex-1 font-light text-gray-500">
-          We're sorry, This page is unknown or does <br /> not exist the page
+          We are sorry, This page is unknown or does <br /> not exist the page
           you are looking for.
         </p>
         <Link href="/">
