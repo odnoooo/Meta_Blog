@@ -4,6 +4,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 
+
 export const Footer = () => {
   return (
     <div className="text-gray-500 flex flex-col gap-6 bg-gray-100 py-16 lg:gap-20 w-screen mt-12 px-3">

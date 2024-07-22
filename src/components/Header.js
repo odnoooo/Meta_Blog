@@ -6,6 +6,7 @@ import Link from "next/link";
 import { SideBar } from "../components/Sidebar";
 import Image from "next/image";
 
+
 export const Header = () => {
   return (
     <div className="w-screen mb-16 lg:mb-[100px]">
