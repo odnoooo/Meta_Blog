@@ -6,7 +6,7 @@ export const Trending = ({ articles }) => {
     <div className="flex flex-col gap-8 lg:w-[1216px]">
       <CardName title="Trending" />
       <div className="w-full overflow-scroll">
-        <div className="w-[400%] lg:w-full flex gap-4 ">
+        <div className="w-[410%] lg:w-full flex gap-4 ">
           {articles.slice(0, 4).map((item, index) => {
             return (
               <div>

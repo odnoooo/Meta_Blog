@@ -7,14 +7,18 @@ export const ArticleCards = ({ img, tags, desc, date }) => {
   const formattedDate = format(new Date(date), "MM/dd/yyyy");
 
   return (
-    <div className=" h-[476px] border rounded-lg  flex flex-col gap-6 w-full p-4">
-      <Image src={img} className="h-60 rounded-lg w-full" />
-      <div className="flex flex-col  ">
+    <div className="h-[476px] border rounded-lg flex flex-col gap-6 w-full p-4">
+      <img
+        src={img}
+        alt="Article image"
+        className="h-60 rounded-lg w-full object-cover"  // object-cover классыг нэмж зурагны харьцааг хадгална
+      />
+      <div className="flex flex-col">
         <div className="flex gap-2">
           {tags.slice(0, 3).map((tag, index) => (
             <p
               key={index}
-              className="w-fit py-2 px-3 bg-[#f7f8ff] rounded-lg text-[#4B6BFB] text-sm "
+              className="w-fit py-2 px-3 bg-[#f7f8ff] rounded-lg text-[#4B6BFB] text-sm"
             >
               {tag}
             </p>
@@ -26,3 +30,4 @@ export const ArticleCards = ({ img, tags, desc, date }) => {
     </div>
   );
 };
+

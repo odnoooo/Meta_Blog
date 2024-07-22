@@ -3,9 +3,10 @@ import Image from "next/image";
 export const TrendingCards = ({ img, tags, desc }) => {
   return (
     <div className=" relative border rounded-2xl h-80 flex  items-end">
-      <Image
-        src={img}
+      <img
         className="object-cover relative w-full h-full rounded-2xl bottom-0"
+        src={img}
+        alt="Trending image"
       />
       <div className=" bg-transparent  bottom-0 flex flex-col rounded-2xl absolute p-5 gap-3">
         <div className="flex gap-2">
