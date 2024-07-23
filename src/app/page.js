@@ -31,7 +31,7 @@ export default function Home() {
       <div className=" m-auto flex flex-col gap-16 text-current lg:w-[1216px]">
         <Main articles={articles} />
         <Trending articles={articles} />
-        <AllBlogPost articles={articles} />
+        <AllBlogPost />
       </div>
       <div className="w-screen bg-gray-100"></div>
     </div>
