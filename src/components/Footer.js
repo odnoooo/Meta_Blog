@@ -24,9 +24,9 @@ export const Footer = () => {
           </div>
         </div>
         <nav className="flex gap-10 items-center justify-center px-5 lg:flex-col lg:gap-2 lg:w-[520px]">
-          <a href="">Home</a>
-          <a href="">Blog</a>
-          <a href="">Contact</a>
+          <Link href="/">Home</Link>
+          <Link href="/blogs">Blogs</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
         <div className="w-[144px] flex justify-between">
           <FaFacebook />

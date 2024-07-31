@@ -7,8 +7,8 @@ import React from 'react';
 
 export const Drawer = ({ isOpen, closeDrawer }) => {
   return (
-    <div className={`fixed inset-0 z-50 ${isOpen ? 'block' : 'hidden'}`}>
-      <div className="fixed inset-0 bg-black opacity-50" onClick={closeDrawer}></div>
+    <div className={`lg:invisible fixed inset-0 z-50 ${isOpen ? 'block' : 'hidden'}`}>
+      <div className=" inset-0 bg-black opacity-50" onClick={closeDrawer}></div>
       <div className="fixed right-0 top-0 w-64 h-full bg-white shadow-lg p-4">
         <div className="flex justify-between bg-blue-500 p-4">
           <p>Close</p>
@@ -16,13 +16,13 @@ export const Drawer = ({ isOpen, closeDrawer }) => {
         </div>
 
         <div>
-          <Link href="/" className="block p-4 hover:bg-slate-200">
+          <Link href="/" className="block p-4 hover:bg-slate-200" onClick={closeDrawer}>
             Home
           </Link>
-          <Link href="/blogs" className="block p-4 hover:bg-slate-200">
+          <Link href="/blogs" className="block p-4 hover:bg-slate-200" onClick={closeDrawer}>
             Blog
           </Link>
-          <Link href="/contact" className="block p-4 hover:bg-slate-200">
+          <Link href="/contact" className="block p-4 hover:bg-slate-200" onClick={closeDrawer}>
             Contact
           </Link>
           <form className="flex justify-between items-center p-2 bg-slate-100 hover:bg-slate-200">

@@ -2,15 +2,15 @@
 
 import { ArticleCards } from "./ArticleCards";
 import { CardName } from "./CardName";
-import Link from "next/link"
+import Link from "next/link";
 import { PiArrowLineUp } from "react-icons/pi";
 import { useEffect, useState } from "react";
 
 const categories = [
   "All",
+  "Javascript",
   "News",
-  "Music",
-  "Discuss",
+  "Windows",
   "Learning"
 ];
 
@@ -31,33 +31,19 @@ export const AllBlogPost = () => {
   };
 
   useEffect(() => {
-    const getData = async () => {
-      try {
-        setLoading(true);
+    setLoading(true);
 
-        const res = await fetch(
-          `https://dev.to/api/articles?page=1&per_page=${perPage}${category !== "All" ? `$tag=${category}` : ""
-          }`
-        );
-        const data = await res.json();
-
-        setArticles(data);
-
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getData();
+    fetch(`https://dev.to/api/articles?page=1&per_page=${perPage}${category !== "All" ? `&tag=${category}` : ""}`)
+      .then((res) => res.json())
+      .then((data) => setArticles(data))
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
   }, [category, perPage]);
-
 
   return (
     <div className="flex flex-col gap-8 w-full lg:w-[1216px] mx-auto px-4 lg:px-0">
       <CardName title="All Blog Post" />
       <div className="flex flex-col lg:flex-row lg:justify-between">
-
         <div className="flex flex-wrap justify-between font-bold text-xs lg:gap-5">
           {categories.map((item) => (
             <button
@@ -79,13 +65,13 @@ export const AllBlogPost = () => {
       </div>
 
       <div className="flex flex-col lg:grid lg:grid-cols-3 gap-5">
-        {articles.map((item) => (
-          <Link key={item.id} href={`/blogs/${item.id}`}>
+        {articles.map((article) => (
+          <Link key={article.id} href={`/blogs/${article.id}`}>
             <ArticleCards
-              img={item.cover_image}
-              tags={item.tag_list}
-              desc={item.description}
-              date={item.created_at}
+              img={article.cover_image}
+              tags={article.tag_list}
+              desc={article.description}
+              date={article.created_at}
             />
           </Link>
         ))}

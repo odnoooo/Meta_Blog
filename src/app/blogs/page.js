@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArticleCards } from "@/components/ArticleCards";
 import { CardName } from "@/components/CardName";
+import { PiArrowLineUp } from "react-icons/pi";
 
 const BlogsPage = () => {
   const [loading, setLoading] = useState(true);
@@ -69,6 +70,11 @@ const BlogsPage = () => {
           {loading ? <p>Loading...</p> : <p>Load More</p>}
         </button>
       </div>
+      <Link href="#art" className="flex justify-end">
+        <button className="p-4 rounded-full hover:bg-gray-100">
+          <PiArrowLineUp />
+        </button>
+      </Link>
     </div>
   );
 };
