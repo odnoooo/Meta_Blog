@@ -6,13 +6,7 @@ import Link from "next/link";
 import { PiArrowLineUp } from "react-icons/pi";
 import { useEffect, useState } from "react";
 
-const categories = [
-  "All",
-  "Javascript",
-  "News",
-  "Windows",
-  "Learning"
-];
+const categories = ["All", "Javascript", "News", "Windows", "Learning"];
 
 export const AllBlogPost = () => {
   const [loading, setLoading] = useState(true);
@@ -33,7 +27,11 @@ export const AllBlogPost = () => {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`https://dev.to/api/articles?page=1&per_page=${perPage}${category !== "All" ? `&tag=${category}` : ""}`)
+    fetch(
+      `https://dev.to/api/articles?page=1&per_page=${perPage}${
+        category !== "All" ? `&tag=${category}` : ""
+      }`
+    )
       .then((res) => res.json())
       .then((data) => setArticles(data))
       .catch((err) => console.log(err))
@@ -41,7 +39,7 @@ export const AllBlogPost = () => {
   }, [category, perPage]);
 
   return (
-    <div className="flex flex-col gap-8 w-full lg:w-[1216px] mx-auto px-4 lg:px-0">
+    <div className="flex flex-col gap-8 w-full lg:w-[1216px] m-auto px-4 lg:px-0">
       <CardName title="All Blog Post" />
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div className="flex flex-wrap justify-between font-bold text-xs lg:gap-5">
@@ -78,7 +76,8 @@ export const AllBlogPost = () => {
       </div>
 
       <div className="m-auto w-fit flex justify-center">
-        <button className="border border-slate-300 hover:bg-gray-100 py-2 px-5 rounded-lg text-base"
+        <button
+          className="border border-slate-300 hover:bg-gray-100 py-2 px-5 rounded-lg text-base"
           onClick={handleLoadMore}
         >
           {loading ? <p>Loading...</p> : <p>Load More</p>}
@@ -92,7 +91,3 @@ export const AllBlogPost = () => {
     </div>
   );
 };
-
-
-
-

@@ -27,8 +27,9 @@ export const Main = ({ articles }) => {
         {articles.map((item, index) => (
           <div
             key={item.title}
-            className={`absolute transition-transform duration-500 ease-in-out w-full h-full scroll-smooth ${index === currentIndex ? "block" : "hidden"
-              }`}
+            className={`absolute transition-transform duration-1000 ease-in-out w-full h-full scroll-smooth ${
+              index === currentIndex ? "block" : "hidden"
+            }`}
             style={{
               transform: `translateX(${(index - currentIndex) * 100}%)`,
             }}
