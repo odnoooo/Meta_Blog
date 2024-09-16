@@ -19,38 +19,42 @@ export const Header = () => {
     setActiveLink(link);
   };
 
+  const paths = [
+    {
+      title: "Home",
+      path: "/",
+    },
+    {
+      title: "Blogs",
+      path: "/blogs",
+    },
+    {
+      title: "Contact",
+      path: "/contact",
+    },
+  ];
+
   return (
     <div className="w-screen mb-8 lg:mb-12">
       <div>
         <header className="px-4 flex justify-between py-5 items-center relative lg:w-[1216px] m-auto">
-          <Image
-            src="/image/Logo.png"
-            alt="Logo"
-            width={158}
-            height={36}
-          />
+          <Image src="/image/Logo.png" alt="Logo" width={158} height={36} />
           <div className="absolute hidden lg:flex items-center gap-[220px] right-3">
-            <nav className="flex gap-10 items-center justify-center">
-              <Link href="/" id="home"
-                onClick={() => handleSetActiveLink("home")}
-                style={{ color: activeLink === "home" ? "#4b6bfb" : "" }}
-              >
-                Home
-              </Link>
-              <Link href="/blogs" id="blogs"
-                onClick={() => handleSetActiveLink("blogs")}
-                style={{ color: activeLink === "blogs" ? "#4b6bfb" : "" }}
-              >
-                Blog
-              </Link>
-              <Link href="/contact" id="contact"
-                onClick={() => handleSetActiveLink("contact")}
-                style={{ color: activeLink === "contact" ? "#4b6bfb" : "" }}
-              >
-                Contact
-              </Link>
+            <nav className="flex gap-10 items-center justify-center  ">
+              {paths.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.path}
+                  onClick={() => handleSetActiveLink(item.path)}
+                  style={{
+                    color: activeLink === item.path ? "#4b6bfb" : "#000",
+                  }}
+                >
+                  <p>{item.title}</p>
+                </Link>
+              ))}
             </nav>
-            <form className="flex justify-between items-center bg-[#f4f4f5] px-2 rounded-lg">
+            <div className="flex justify-between items-center bg-[#f4f4f5] px-2 rounded-lg">
               <input
                 className="border-none bg-transparent p-2 focus:outline-none"
                 name="search"
@@ -62,9 +66,12 @@ export const Header = () => {
                   <CiSearch />
                 </button>
               </Link>
-            </form>
+            </div>
           </div>
-          <IconButton onClick={handleDrawer} className="md:fixed  flex items-center">
+          <IconButton
+            onClick={handleDrawer}
+            className="md:fixed  flex items-center"
+          >
             <FaBars size={24} className="lg:invisible md:fixed z-22" />
           </IconButton>
         </header>
@@ -79,17 +86,9 @@ const IconButton = ({ children, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className="cursor-pointer w-[40px] h-[40px] rounded-full hover:bg-gray-100 flex items-center justify-center">
+      className="cursor-pointer w-[40px] h-[40px] rounded-full hover:bg-gray-100 flex items-center justify-center"
+    >
       {children}
     </div>
   );
 };
-
-
-
-
-
-
-
-
-

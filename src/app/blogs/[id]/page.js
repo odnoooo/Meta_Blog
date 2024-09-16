@@ -24,7 +24,7 @@ const BlogPage = () => {
   if (!article) return <>Loading...</>;
   const formattedDate = format(new Date(article.created_at), "MM/dd/yyyy");
   return (
-    <div className="w-full lg:w-[1216px] px-3">
+    <div className="w-full lg:w-[1216px] px-3 lg:m-auto">
       <div className="lg:w-[800px] m-auto flex flex-col gap-8 font-light">
         <div>
           <div className="flex flex-col gap-8" key={article.id}>
