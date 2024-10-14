@@ -33,7 +33,6 @@ export const Header = () => {
       path: "/contact",
     },
   ];
-
   return (
     <div className="w-screen mb-8 lg:mb-12">
       <div>
