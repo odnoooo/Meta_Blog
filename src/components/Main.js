@@ -1,10 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
-
+import { useState } from "react";
 import { RiArrowLeftWideFill } from "react-icons/ri";
 import { RiArrowRightWideFill } from "react-icons/ri";
 import { MainCards } from "./MainCards";
-import Link from "next/link";
 
 export const Main = ({ articles }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,7 +25,7 @@ export const Main = ({ articles }) => {
         {articles.map((item, index) => (
           <div
             key={item.title}
-            className={`absolute transition-transform duration-1000 ease-in-out w-full h-full scroll-smooth ${
+            className={`absolute  duration-1000 ease-in-out w-full h-full scroll-smooth ${
               index === currentIndex ? "block" : "hidden"
             }`}
             style={{
