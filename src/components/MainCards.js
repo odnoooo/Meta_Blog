@@ -9,14 +9,16 @@ export const MainCards = ({ img, tags, desc, date }) => {
         src={img}
         className="relative w-full h-full rounded-2xl"
         alt="Main image"
-
       />
       <div className="lg:w-1/2 w-full flex flex-col absolute p-2">
         <div className=" bg-white  p-10 gap-5 rounded-2xl">
           <div className="flex flex-col gap-5">
             <div className="flex gap-2">
               {tags.slice(0, 3).map((tag, index) => (
-                <p key={index} className=" w-fit py-2 px-3 bg-[#4B6BFB] rounded-lg text-white text-sm ">
+                <p
+                  key={index}
+                  className=" w-fit py-2 px-3 bg-[#4B6BFB] rounded-lg text-white text-sm "
+                >
                   {tag}
                 </p>
               ))}

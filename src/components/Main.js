@@ -1,11 +1,22 @@
 "use client";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import { RiArrowLeftWideFill } from "react-icons/ri";
 import { RiArrowRightWideFill } from "react-icons/ri";
 import { MainCards } from "./MainCards";
 
 export const Main = ({ articles }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  // const [percent, setPercent] = useState(0);
+  // const [isTransitioning, setIsTransitioning] = useState(true);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     percent === 3 ? setIsTransitioning(false) : setIsTransitioning(true);
+  //     setPercent((prev) => (prev + 1) % 4);
+  //   }, 5000);
+  //   return () => clearInterval(interval);
+  // });
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>

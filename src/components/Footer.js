@@ -42,10 +42,10 @@ const ContactInfo = () => (
 export const Footer = () => {
   return (
     <div className="text-gray-500 flex flex-col gap-6 bg-gray-100 py-16 lg:gap-20 w-screen mt-12 px-3">
-      <div className="flex flex-col gap-6 lg:flex-row w-full lg:w-[1216px] m-auto">
+      <div className="flex justify-between gap-6 lg:flex-row w-full lg:w-[1216px] m-auto">
         <div className="flex flex-col gap-6">
           <h2 className="font-bold text-black text-lg">About</h2>
-          <h3 className="font-semibold text-base">
+          <h3 className="font-light text-base">
             Lorem ipsum dolor sit amet, <br /> consectetur adipiscing elit, sed
             do <br />
             eiusmod tempor incididunt ut <br /> labore et dolore magna aliqua.
@@ -70,7 +70,7 @@ export const Footer = () => {
             width={48}
             height={48}
           />
-          <div className="h-12 flex items-center">
+          <div className="h-12 flex flex-col  items-center">
             <Image
               className="h-5"
               src="/image/MetaBlog (2).png"

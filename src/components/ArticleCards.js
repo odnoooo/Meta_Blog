@@ -2,7 +2,6 @@
 
 import { format } from "date-fns";
 
-
 export const ArticleCards = ({ img, tags, desc, date }) => {
   const formattedDate = format(new Date(date), "MM/dd/yyyy");
 
@@ -32,6 +31,3 @@ export const ArticleCards = ({ img, tags, desc, date }) => {
     </div>
   );
 };
-
-
-
